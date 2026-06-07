@@ -1,12 +1,1 @@
-{
-  "last_updated": {
-    "fixtures_upcoming": null,
-    "fixtures_recent": null,
-    "players": null,
-    "teams_clubs": null,
-    "teams_national": null,
-    "referees": null
-  },
-  "plan": "pro",
-  "degraded_mode": false
-}
+{"last_updated":{"fixtures_upcoming":"2026-06-07T19:43:38Z","fixtures_recent":"2026-06-07T19:43:38Z","players":null,"teams_clubs":null,"teams_national":null,"referees":null},"plan":"pro","degraded_mode":false}
