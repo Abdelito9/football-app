@@ -4,6 +4,10 @@
   "clubs": [],
   "national_teams": [],
   "competitions": [
+    { "league_id": 1,   "season": 2026, "label": "Coupe du Monde 2026" },
+    { "league_id": 9,   "season": 2024, "label": "Copa America" },
+    { "league_id": 8,   "season": 2024, "label": "Euro 2024" },
+    { "league_id": 5,   "season": 2022, "label": "Nations League" },
     { "league_id": 39,  "season": 2025, "label": "Premier League" },
     { "league_id": 140, "season": 2025, "label": "La Liga" },
     { "league_id": 78,  "season": 2025, "label": "Bundesliga" },
