@@ -144,8 +144,7 @@ def fetch_all_fixtures(watchlist):
     date_from  = (today - timedelta(days=days_back)).isoformat()
     date_to    = (today + timedelta(days=days_ahead)).isoformat()
 
-    all_teams = set(watchlist.get("clubs", []) + watchlist.get("national_teams", []))
-    fixtures  = {}
+    fixtures = {}
 
     for comp in watchlist.get("competitions", []):
         print(f"  [{comp['label']}] fetching {date_from} → {date_to}")
@@ -158,12 +157,9 @@ def fetch_all_fixtures(watchlist):
         if rows is None:
             continue
         for raw in rows:
-            h = (raw.get("teams") or {}).get("home") or {}
-            a = (raw.get("teams") or {}).get("away") or {}
-            if h.get("id") in all_teams or a.get("id") in all_teams:
-                fid = (raw.get("fixture") or {}).get("id")
-                if fid:
-                    fixtures[fid] = raw
+            fid = (raw.get("fixture") or {}).get("id")
+            if fid:
+                fixtures[fid] = raw
 
     return fixtures
 

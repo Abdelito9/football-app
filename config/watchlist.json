@@ -1,13 +1,16 @@
 {
-  "players": [276, 1161, 874, 184, 521, 306],
-  "clubs": [33, 40, 85, 157, 541, 529],
-  "national_teams": [2, 6, 9, 26],
+  "_comment": "competitions = obligatoire. players/clubs/national_teams = optionnel, sert uniquement à enrichir les stats des pages détail.",
+  "players": [],
+  "clubs": [],
+  "national_teams": [],
   "competitions": [
-    { "league_id": 39, "season": 2024, "label": "Premier League" },
-    { "league_id": 61, "season": 2024, "label": "Ligue 1" },
-    { "league_id": 2,  "season": 2024, "label": "Champions League" },
-    { "league_id": 4,  "season": 2024, "label": "Euro 2024" },
-    { "league_id": 140,"season": 2024, "label": "La Liga" }
+    { "league_id": 39,  "season": 2024, "label": "Premier League" },
+    { "league_id": 140, "season": 2024, "label": "La Liga" },
+    { "league_id": 78,  "season": 2024, "label": "Bundesliga" },
+    { "league_id": 135, "season": 2024, "label": "Serie A" },
+    { "league_id": 61,  "season": 2024, "label": "Ligue 1" },
+    { "league_id": 2,   "season": 2024, "label": "Champions League" },
+    { "league_id": 3,   "season": 2024, "label": "Europa League" }
   ],
   "options": {
     "days_ahead": 7,
