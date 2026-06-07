@@ -1,0 +1,46 @@
+name: Fetch Fixtures (4x/day)
+
+on:
+  schedule:
+    # UTC: 07:00, 12:00, 17:00, 22:00
+    - cron: "0 7,12,17,22 * * *"
+  workflow_dispatch:   # allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch fixtures
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          API_PLAN:         ${{ secrets.API_PLAN || 'pro' }}
+          MAX_REQUESTS:     "200"
+        run: python scripts/fetch_fixtures.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update fixtures $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push
+          fi

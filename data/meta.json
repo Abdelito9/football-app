@@ -1,0 +1,12 @@
+{
+  "last_updated": {
+    "fixtures_upcoming": null,
+    "fixtures_recent": null,
+    "players": null,
+    "teams_clubs": null,
+    "teams_national": null,
+    "referees": null
+  },
+  "plan": "pro",
+  "degraded_mode": false
+}
